@@ -3,7 +3,62 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Guilherme Dias Simoes" />
+        <meta
+            name="description"
+            content="This is a solution to the 'Color Scheme Generator' challenge on Scrimba"
+        />
+        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+
+        <!-- CSS Remedy: https://github.com/jensimmons/cssremedy -->
+        <link rel="stylesheet" href="styles/remedy.css" />
+
         <title>Color Scheme Generator</title>
+
+        <link rel="stylesheet" href="styles/style.css" />
+        <script src="scripts/main.js" type="module"></script>
     </head>
-    <body></body>
+    <body>
+        <main>
+            <form id="colorSchemeForm">
+                <input type="color" name="hex" id="hex" />
+                <select name="mode" id="mode">
+                    <option value="monochrome">monochrome</option>
+                    <option value="monochrome-dark">monochrome-dark</option>
+                    <option value="monochrome-light">monochrome-light</option>
+                    <option value="analogic">analogic</option>
+                    <option value="complement">complement</option>
+                    <option value="analogic-complement">
+                        analogic-complement
+                    </option>
+                    <option value="triad">triad</option>
+                    <option value="quad">quad</option>
+                </select>
+                <button type="submit">Get color scheme</button>
+            </form>
+
+            <section class="colors">
+                <figure class="color">
+                    <div style="background-color: #f55a5a"></div>
+                    <p>#F55A5A</p>
+                </figure>
+                <figure class="color">
+                    <div style="background-color: #2b283a"></div>
+                    <p>#2B283A</p>
+                </figure>
+                <figure class="color">
+                    <div style="background-color: #fbf3ab"></div>
+                    <p>#FBF3AB</p>
+                </figure>
+                <figure class="color">
+                    <div style="background-color: #aad1b6"></div>
+                    <p>#AAD1B6</p>
+                </figure>
+                <figure class="color">
+                    <div style="background-color: #a626d3"></div>
+                    <p>#A626D3</p>
+                </figure>
+            </section>
+        </main>
+    </body>
 </html>
