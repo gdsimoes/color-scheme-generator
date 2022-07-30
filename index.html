@@ -13,31 +13,71 @@
         <!-- CSS Remedy: https://github.com/jensimmons/cssremedy -->
         <link rel="stylesheet" href="styles/remedy.css" />
 
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
         <title>Color Scheme Generator</title>
 
         <link rel="stylesheet" href="styles/style.css" />
+        <script src="scripts/customSelect.js" type="module"></script>
         <script src="scripts/main.js" type="module"></script>
     </head>
     <body>
         <main>
             <form id="colorSchemeForm">
-                <input type="color" name="hex" id="hex" />
-                <select name="mode" id="mode">
-                    <option value="monochrome">monochrome</option>
-                    <option value="monochrome-dark">monochrome-dark</option>
-                    <option value="monochrome-light">monochrome-light</option>
-                    <option value="analogic">analogic</option>
-                    <option value="complement">complement</option>
-                    <option value="analogic-complement">
-                        analogic-complement
-                    </option>
-                    <option value="triad">triad</option>
-                    <option value="quad">quad</option>
-                </select>
-                <button type="submit">Get color scheme</button>
+                <!-- <input type="color" name="hex" id="hex" /> -->
+                <div class="select-wrapper">
+                    <select name="mode" id="mode">
+                        <option value="monochrome">monochrome</option>
+                        <option value="monochrome-dark">monochrome-dark</option>
+                        <option value="monochrome-light">
+                            monochrome-light
+                        </option>
+                        <option value="analogic">analogic</option>
+                        <option value="complement">complement</option>
+                        <option value="analogic-complement">
+                            analogic-complement
+                        </option>
+                        <option value="triad">triad</option>
+                        <option value="quad">quad</option>
+                    </select>
+                </div>
+
+                <!-- Just for testing -->
+                <hr />
+                <div class="select-wrapper">
+                    <select name="mode">
+                        <option value="monochrome">monochrome</option>
+                        <option value="monochrome-dark">monochrome-dark</option>
+                        <option value="monochrome-light">
+                            monochrome-light
+                        </option>
+                        <option value="analogic">analogic</option>
+                        <option value="complement">complement</option>
+                        <option value="analogic-complement">
+                            analogic-complement
+                        </option>
+                        <option value="triad">triad</option>
+                        <option value="quad">quad</option>
+                    </select>
+                </div>
+
+                <!-- <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vero aut at corrupti harum voluptas. Esse molestias, nihil
+                    iste minima at cupiditate nisi iure quasi, aperiam
+                    assumenda, dolor asperiores recusandae adipisci!
+                </p> -->
+                <!-- End of testing -->
+                <!-- <button type="submit">Get color scheme</button> -->
             </form>
 
-            <section class="colors">
+            <!-- <section class="colors">
                 <figure class="color">
                     <div style="background-color: #f55a5a"></div>
                     <p>#F55A5A</p>
@@ -58,7 +98,7 @@
                     <div style="background-color: #a626d3"></div>
                     <p>#A626D3</p>
                 </figure>
-            </section>
+            </section> -->
         </main>
     </body>
 </html>
