@@ -34,6 +34,47 @@ body {
 
 main {
   background-color: var(--main-bg);
+  width: 550px;
+  height: 550px;
+}
+
+form {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 15px 25px 14px;
+}
+
+#hex {
+  width: 61px;
+  height: 42px;
+  background-color: #e5e5e5;
+  border: 0.5px solid #d1d5db;
+  position: relative;
+}
+
+::-moz-color-swatch,
+input[type=color i]::-webkit-color-swatch {
+  border: 0.5px solid #313131;
+  box-sizing: content-box;
+  width: 51px;
+  height: 34px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type=color i]::-webkit-color-swatch {
+  border: 0.5px solid #313131;
+  box-sizing: content-box;
+  width: 51px;
+  height: 34px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
 }
 
 /****************
@@ -45,6 +86,37 @@ main {
 
 .select-wrapper > select {
   display: none;
+}
+
+.select-options {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  position: absolute;
+  top: calc(100% + 3px);
+  background-color: var(--main-bg);
+}
+
+.select-selected,
+.select-options > div {
+  width: 312px;
+  padding: 0 13px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-selected {
+  height: 42px;
+  line-height: 42px;
+  border: 1px solid #d1d5db;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+.select-options > div {
+  height: 40px;
+  line-height: 40px;
 }
 
 .select-selected::after {
