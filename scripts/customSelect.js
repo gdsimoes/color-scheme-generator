@@ -30,9 +30,9 @@ for (const wrapper of wrappers) {
             selectedDiv.textContent = event.currentTarget.textContent;
 
             // Unselect previouslySelectedDiv
-            const previouslySelectedDiv =
-                wrapper.querySelector(".select-option-selected") ??
-                select.options[0];
+            const previouslySelectedDiv = wrapper.querySelector(
+                ".select-option-selected"
+            );
             previouslySelectedDiv.classList.remove("select-option-selected");
 
             // Add class 'select-option-selected' to current div
@@ -44,6 +44,9 @@ for (const wrapper of wrappers) {
 
         optionsDiv.append(optionDiv);
     }
+
+    // Add select-option-selected class to first option
+    optionsDiv.firstElementChild.classList.add("select-option-selected");
 
     wrapper.append(optionsDiv);
 

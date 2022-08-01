@@ -1,18 +1,23 @@
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-// Variables
+/*************
+* Variables
+*************/
 $black: #1c1c1c;
+$light-gray: #e5e5e5;
+$dark-gray: #d1d5db;
 
 // Light mode
 :root {
     --p-color: #2b283a;
     --main-bg: white;
+    // Can't use Sass variables here...
+    // --btn-border: 1px solid $dark-gray;
+    --btn-border: 1px solid #d1d5db;
+    --btn-bg: white;
+    --btn-color: #3d4b60;
+    --select-color: #111827;
+    --selected-color: #111827;
+    --arrow-icon: url(../images/arrow-light.svg);
+    --check-icon: url(../images/check-light.svg);
 }
 
 // Dark mode
@@ -20,10 +25,19 @@ $black: #1c1c1c;
     :root {
         --p-color: #d5d4d8;
         --main-bg: #1f2937;
+        --btn-border: none;
+        --btn-bg: #3d4b60;
+        --btn-color: white;
+        --select-color: white;
+        --selected-color: #d5d4d8;
+        --arrow-icon: url(../images/arrow-dark.svg);
+        --check-icon: url(../images/check-dark.svg);
     }
 }
 
-// Typography
+/*************
+* Typography
+*************/
 html {
     font-family: "Inter", sans-serif;
     font-weight: 500;
@@ -31,7 +45,34 @@ html {
     color: var(--p-color);
 }
 
-// Layout
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.select-wrapper {
+    div {
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--select-color);
+    }
+
+    .select-selected {
+        color: var(--selected-color);
+    }
+
+    .select-option-selected {
+        font-weight: 600;
+    }
+}
+
+/**********
+* Layout
+**********/
 body {
     background-color: $black;
     min-height: 100vh;
@@ -56,10 +97,10 @@ form {
 #hex {
     width: 61px;
     height: 42px;
+    margin-right: 17px;
 
-    // padding: 0;
-    background-color: #e5e5e5;
-    border: 0.5px solid #d1d5db;
+    background-color: $dark-gray;
+    border: 0.5px solid $light-gray;
     position: relative;
 }
 
@@ -95,6 +136,26 @@ input[type="color" i]::-webkit-color-swatch {
 
     // Necessary for Safari
     border-radius: 0;
+}
+
+// Check icon
+.select-option-selected::after {
+    content: "";
+    display: inline-block;
+    background-image: var(--check-icon);
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    width: 123px;
+    height: 42px;
+    margin-left: 13px;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    border: var(--btn-border);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
 }
 
 /****************
@@ -137,7 +198,7 @@ input[type="color" i]::-webkit-color-swatch {
     line-height: 42px;
     // Needs to change
     // margin-bottom: 3px;
-    border: 1px solid #d1d5db;
+    border: 1px solid $dark-gray;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
 }
@@ -151,7 +212,7 @@ input[type="color" i]::-webkit-color-swatch {
 .select-selected::after {
     content: "";
     display: inline-block;
-    background-image: url(../images/arrow.svg);
+    background-image: var(--arrow-icon);
     width: 20px;
     height: 20px;
 }
