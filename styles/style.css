@@ -146,6 +146,7 @@ button:active {
 .colors {
   display: flex;
   height: 460px;
+  cursor: pointer;
 }
 
 .color {

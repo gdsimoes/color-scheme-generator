@@ -1,3 +1,7 @@
+/*************
+ * API
+ *************/
+
 function populate({ colors }) {
     const divs = document.querySelectorAll(".color");
 
@@ -27,3 +31,32 @@ colorSchemeForm.addEventListener("submit", (event) => {
         .then((res) => res.json())
         .then((data) => populate(data));
 });
+
+/********************
+ * Copy to clipboard
+ ********************/
+
+const colorList = document.querySelectorAll(".color");
+const colorsSection = document.querySelector(".colors");
+let occupied = false;
+
+for (const color of colorList) {
+    color.addEventListener("click", (event) => {
+        if (occupied) return;
+
+        const p = event.currentTarget.querySelector("p");
+
+        occupied = true;
+        const copyText = p.textContent;
+        colorsSection.style.cursor = "default";
+
+        navigator.clipboard.writeText(copyText);
+        p.textContent = "Copied!";
+
+        setTimeout(() => {
+            occupied = false;
+            p.textContent = copyText;
+            colorsSection.style.cursor = "pointer";
+        }, 1000);
+    });
+}
