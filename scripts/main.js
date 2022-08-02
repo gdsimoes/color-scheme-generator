@@ -1,6 +1,6 @@
-/*************
+/*******
  * API
- *************/
+ ******/
 
 function populate({ colors }) {
     const divs = document.querySelectorAll(".color");
