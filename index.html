@@ -29,7 +29,11 @@
     </head>
     <body>
         <main>
-            <form id="colorSchemeForm">
+            <form
+                id="colorSchemeForm"
+                action="https://www.thecolorapi.com/scheme"
+                method="get"
+            >
                 <input type="color" name="hex" id="hex" value="#F55A5A" />
                 <div class="select-wrapper">
                     <select name="mode" id="mode">
@@ -50,14 +54,8 @@
 
                 <button type="submit">Get color scheme</button>
             </form>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                natus quidem rerum itaque voluptate officia eveniet cupiditate,
-                modi beatae amet accusantium enim assumenda necessitatibus nisi
-                obcaecati? Ipsum, incidunt. Nostrum, soluta!
-            </p>
 
-            <!-- <section class="colors">
+            <section class="colors">
                 <figure class="color">
                     <div style="background-color: #f55a5a"></div>
                     <p>#F55A5A</p>
@@ -78,7 +76,7 @@
                     <div style="background-color: #a626d3"></div>
                     <p>#A626D3</p>
                 </figure>
-            </section> -->
+            </section>
         </main>
     </body>
 </html>

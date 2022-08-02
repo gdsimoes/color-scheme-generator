@@ -92,6 +92,9 @@ form {
     display: flex;
     justify-content: space-between;
     padding: 23px 15px 25px 14px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.15);
+    // This is necessary for the box-shadow to work
+    position: relative;
 }
 
 #hex {
@@ -156,6 +159,36 @@ button {
     border: var(--btn-border);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
+    transition: filter 200ms;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+button:active {
+    filter: brightness(0.8);
+}
+
+.colors {
+    display: flex;
+    height: 460px;
+}
+
+.color {
+    margin: 0;
+    width: 20%;
+    div {
+        width: 100%;
+        height: 414px;
+    }
+
+    p {
+        margin: 0;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+    }
 }
 
 /****************

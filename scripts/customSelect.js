@@ -46,7 +46,9 @@ for (const wrapper of wrappers) {
     }
 
     // Add select-option-selected class to first option
-    optionsDiv.firstElementChild.classList.add("select-option-selected");
+    optionsDiv
+        .querySelectorAll("div")
+        [select.selectedIndex].classList.add("select-option-selected");
 
     wrapper.append(optionsDiv);
 
